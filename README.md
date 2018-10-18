@@ -24,6 +24,6 @@ Things you may want to cover:
 * ...
 
 If Docker Mysql image conflicts to another one
-> Running systemctl restart docker sorted it out
+> systemctl restart
 
 # soccerleague
