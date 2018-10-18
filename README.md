@@ -22,4 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+If Docker Mysql image conflicts to another one
+> Running systemctl restart docker sorted it out
+
 # soccerleague
