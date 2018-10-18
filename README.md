@@ -27,3 +27,5 @@ If Docker Mysql image conflicts to another one
 > systemctl restart
 
 # soccerleague
+* Ativar pagina de config Kaminari
+> rails g kaminari:config
