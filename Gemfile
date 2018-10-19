@@ -27,8 +27,12 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-# Flexible authentication solution for Rails with Warden. http://blog.plataformatec.com.br/tag/…
+# Flexible authentication solution for Rails with Warden.
 gem 'devise'
+# A library for generating fake data such as names, addresses, and phone numbers.
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+# A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for modern web app frameworks and ORMs
+gem 'kaminari'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
