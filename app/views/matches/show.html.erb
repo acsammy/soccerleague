@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to ' <  Back', matches_path, class: "btn btn-primary" %>
+<p>
+  <strong>Home:</strong>
+  <%= @match.home.name %>
+</p>
+
+<p>
+  <strong>Score1:</strong>
+  <%= @match.score1 %>
+</p>
+
+<p>
+  <strong>Visitor:</strong>
+  <%= @match.visitor.name %>
+</p>
+
+<p>
+  <strong>Score2:</strong>
+  <%= @match.score2 %>
+</p>
+
+<p>
+  <strong>Winner:</strong>
+  <%= @match.winner %>
+</p>
+
+<%= link_to 'Edit', edit_match_path(@match) %>
+<%= link_to 'Destroy', @match, method: :delete, data: { confirm: 'Are you sure?' } %>

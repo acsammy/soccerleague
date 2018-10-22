@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  home: one
+  visitor: one
+  score1: 1
+  score2: 1
+  winner: MyString
+
+two:
+  home: two
+  visitor: two
+  score1: 1
+  score2: 1
+  winner: MyString

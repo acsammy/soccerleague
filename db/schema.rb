@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_18_215238) do
+ActiveRecord::Schema.define(version: 2018_10_22_214958) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,6 +22,27 @@ ActiveRecord::Schema.define(version: 2018_10_18_215238) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "championships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.integer "modality"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "matches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "home_id"
+    t.bigint "visitor_id"
+    t.integer "score1"
+    t.integer "score2"
+    t.string "winner"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "championship_id"
+    t.index ["championship_id"], name: "index_matches_on_championship_id"
+    t.index ["home_id"], name: "index_matches_on_home_id"
+    t.index ["visitor_id"], name: "index_matches_on_visitor_id"
   end
 
   create_table "players", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -38,5 +59,6 @@ ActiveRecord::Schema.define(version: 2018_10_18_215238) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "matches", "championships"
   add_foreign_key "players", "teams"
 end

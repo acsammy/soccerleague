@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Matches</h1>
+<%= link_to 'New Match', new_match_path, class: "btn btn-primary", style: "float:right" %>
+
+<br>
+<% @matches.each do |match| %>
+
+  <div class="card col-lg-6 col-md-6 col-md-6">
+    <div class="card-body">
+      <%= link_to match do %>
+        <%= match.home.name %>   <%= match.score1 %>   X    <%= match.score2 %>  <%= match.visitor.name %>
+      <% end %>
+    </div>
+  </div>
+
+<% end %>
+
+<br>

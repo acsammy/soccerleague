@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :championships
+  resources :matches
   resources :players
   resources :teams
   get root to: "home#index"

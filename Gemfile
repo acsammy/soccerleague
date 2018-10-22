@@ -33,6 +33,8 @@ gem 'devise'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 # A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for modern web app frameworks and ORMs
 gem 'kaminari'
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -49,6 +51,8 @@ group :development do
   # Better error page for Rack apps
   gem "better_errors"
   gem "binding_of_caller"
+  # Generate Entity-Relationship Diagrams for Rails applications
+#  gem 'rails-erd'
 end
 
 group :test do

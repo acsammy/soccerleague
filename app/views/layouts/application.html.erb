@@ -33,6 +33,32 @@
                 Jogadores
               <% end %>
             </li>
+            <li class="nav-item">
+              <%= link_to championships_path, class:"nav-link" do %>
+                Campeonatos
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to matches_path, class:"nav-link" do %>
+                Jogos
+              <% end %>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Cadastrar
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to new_player_path, class: "dropdown-item" do %>
+                  Jogador
+                <% end%>
+                <%= link_to new_team_path, class: "dropdown-item" do %>
+                  Time
+                <% end%>
+                <%= link_to new_championship_path, class: "dropdown-item" do %>
+                  Campeonato
+                <% end%>
+              </div>
+            </li>
           </ul>
           <ul class="navbar-nav ml-auto pull-right">
             <% unless admin_signed_in? %>
