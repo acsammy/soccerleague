@@ -11,10 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, class:"form-control" %>
+  <div class="form-group row">
+    <%= form.label :name, class:"col-sm-2 col-form-label"  %>
+    <div class="col-sm-8">
+      <%= form.text_field :name, class:"form-control"  %>
+    </div>
   </div>
+
+  <div class="form-group row">
+    <%= form.label :modality, class:"col-sm-2 col-form-label"%>
+    <div class="col-sm-8">
+      <%= form.select(:modality, Championship.modalities.keys, class:"custom-select") %>
+    </div>
+  </div>
+
 <br>
   <div class="actions">
     <%= form.submit %>

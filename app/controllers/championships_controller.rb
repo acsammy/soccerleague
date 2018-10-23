@@ -10,6 +10,13 @@ class ChampionshipsController < ApplicationController
   # GET /championships/1
   # GET /championships/1.json
   def show
+    matches = Match.all
+    @matches = []
+    matches.each do |match|
+      if match.championship_id == set_championship.id
+        @matches.push(match)
+      end
+    end
   end
 
   # GET /championships/new
@@ -25,7 +32,6 @@ class ChampionshipsController < ApplicationController
   # POST /championships.json
   def create
     @championship = Championship.new(championship_params)
-
     respond_to do |format|
       if @championship.save
         format.html { redirect_to @championship, notice: 'Championship was successfully created.' }
@@ -69,6 +75,6 @@ class ChampionshipsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def championship_params
-      params.require(:championship).permit(:name)
+      params.require(:championship).permit(:name, :modality)
     end
 end

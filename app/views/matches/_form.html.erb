@@ -31,9 +31,9 @@
     <%= form.number_field :score2, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :championship_id %>
-    <%= form.select :championship_id, options_for_select(Championship.all.map{|s|[s.name, s.id]}) %>
+    <%= form.select :championship_id, options_for_select(Championship.all.map{|s|[s.name, s.id]}, class:"form-control", id:"formGroupExampleInput2") %>
   </div>
 
   <br>

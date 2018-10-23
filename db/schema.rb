@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_22_214958) do
+ActiveRecord::Schema.define(version: 2018_10_22_210153) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -37,9 +37,9 @@ ActiveRecord::Schema.define(version: 2018_10_22_214958) do
     t.integer "score1"
     t.integer "score2"
     t.string "winner"
+    t.bigint "championship_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "championship_id"
     t.index ["championship_id"], name: "index_matches_on_championship_id"
     t.index ["home_id"], name: "index_matches_on_home_id"
     t.index ["visitor_id"], name: "index_matches_on_visitor_id"
@@ -59,6 +59,5 @@ ActiveRecord::Schema.define(version: 2018_10_22_214958) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "matches", "championships"
   add_foreign_key "players", "teams"
 end

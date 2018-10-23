@@ -28,7 +28,7 @@ class MatchesController < ApplicationController
     if @match.score1 > @match.score2
       @match.winner = @match.home.name
     else
-      @match.winner = @match.home.visitor
+      @match.winner = @match.visitor.name
     end
 
     respond_to do |format|
@@ -74,6 +74,6 @@ class MatchesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def match_params
-      params.require(:match).permit(:home_id, :visitor_id, :score1, :score2, :winner)
+      params.require(:match).permit(:home_id, :visitor_id, :score1, :score2, :winner, :championship_id)
     end
 end

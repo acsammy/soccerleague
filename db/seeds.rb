@@ -26,15 +26,15 @@ puts "Criando Championship-----------"
   )
 end
 puts "------------ CHAMPIONSHIP criados"
-# puts "Criando Games------------"
-# 10.times do
-#   Game.find_or_create_by!(
-#     team1 = Team.all.sample.name,
-#     team2 = Team.all.sample.name,
+# puts "Criando Match------------"
+# 100.times do
+#   Match.find_or_create_by!(
+#     home_id = Team.all.sample,
+#     visitor_id = Team.all.sample,
 #     score1 = "#{Random.rand(10)}",
 #     score2 = "#{Random.rand(10)}",
-#     winner = [team1, team2].sample,
-#     championship = Championship.all.sample
+#     championship_id = Championship.all.sample,
+#     winner = Team.all.sample
 #   )
 # end
-# puts "--------------- GAMES criados"
+# puts "--------------- MATCH criados"

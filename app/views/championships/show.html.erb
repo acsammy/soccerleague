@@ -1,6 +1,26 @@
 <p id="notice"><%= notice %></p>
+<%= link_to ' < Back', championships_path %>
 
-<h1> <%= @championship.name %> </h1>
+<h1>
+  <%= @championship.name %>
+</h1>
+<h4>
+  <%= @championship.modality_type %>
+</h4>
 
-<%= link_to 'Edit', edit_championship_path(@championship) %> |
-<%= link_to 'Back', championships_path %>
+<% @matches.each do |match|%>
+<div class="input-group">
+  <div class="input-group col-lg-12 col-md-6 col-sm-6">
+    <span class="input-group-text"><%= match.home.name %>   <%= match.score1 %></span>
+    <span class="input-group-text">  X  </span>
+    <span class="input-group-text"><%= match.score2 %>   <%= match.visitor.name %></span>
+    <br>
+  </div>
+</div>
+
+<% end %>
+
+<% if admin_signed_in? %>
+  <%= link_to 'Edit', edit_championship_path(@championship) %> |
+  <%= link_to 'Destroy', @championship, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
