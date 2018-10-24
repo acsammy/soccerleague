@@ -9,6 +9,7 @@
   <strong>Team:</strong>
   <%= @player.team %>
 </p>
-
-<%= link_to 'Edit', edit_player_path(@player) %> |
+<% if admin_signed_in? %>
+  <%= link_to 'Edit', edit_player_path(@player) %> |
+<% end %>
 <%= link_to 'Back', players_path %>

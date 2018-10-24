@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Championships</h1>
-
-<%= link_to 'New Championship', new_championship_path, class: "btn btn-primary", style: "float: right;" %>
+<% if admin_signed_in? %>
+  <%= link_to 'New Championship', new_championship_path, class: "btn btn-primary", style: "float: right;" %>
+<% end  %>
 
 <br><br>
 <div class="row">

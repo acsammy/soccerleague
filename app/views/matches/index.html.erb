@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Matches</h1>
-<%= link_to 'New Match', new_match_path, class: "btn btn-primary", style: "float:right" %>
-
+<% if admin_signed_in? %>
+  <%= link_to 'New Match', new_match_path, class: "btn btn-primary", style: "float:right" %>
+<% end %>
 <br>
 <% @matches.each do |match| %>
 

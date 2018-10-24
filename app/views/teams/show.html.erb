@@ -5,5 +5,7 @@
   <%= @team.name %>
 </p>
 
-<%= link_to 'Edit', edit_team_path(@team) %> |
+<% if admin_signed_in? %>
+  <%= link_to 'Edit', edit_team_path(@team) %> |
+<% end %>
 <%= link_to 'Back', teams_path %>
